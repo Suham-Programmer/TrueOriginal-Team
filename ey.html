@@ -1,226 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Aspirant website </title>
-    <style>
-        /* Base Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Server</title>
 
-        /* Header Navigation */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-        .nav-links li {
-            margin-left: 20px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #3498db;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        .cta-btn {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .cta-btn:hover {
-            background-color: #c0392b;
-        }
-
-        /* Features Section */
-        .features {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .feature-card h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
-    </style>
-</head>
-<!-- Fullscreen Video Page -->
-<div id="videoPage" style="
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:black;
-    z-index:9999;
-">
-    <video autoplay muted loop playsinline
-           style="width:100%;height:100%;object-fit:cover;">
-        <source src="c:\Users\GOUTAM\Downloads\trump_pointing.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-<script>
-    function showVideo() {
-        document.querySelector("header").style.display = "none";
-        document.querySelector(".hero").style.display = "none";
-        document.querySelector(".features").style.display = "none";
-        document.querySelector("footer").style.display = "none";
-    
-        document.getElementById("videoPage").style.display = "block";
-    
-        const video = document.querySelector("#videoPage video");
-        video.play();
-    }
-    </script>
-<script>
-function showFeatures() {
-    document.getElementById("featurePanel").style.display = "block";
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-function closeFeatures() {
-    document.getElementById("featurePanel").style.display = "none";
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#3498db,#2c3e50);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
-</script>
 
-<body>
-
-    <!-- Top Navigation Bar -->
-    <header>
-        <nav>
-            <div class="logo"> Aspirant </div>
-            <ul class="nav-links">
-<li>
-    <a href="features.html">Features</a>
-</li>
-<li><a href="contact.html">Contact</a></li>
-
-            </ul>
-        </nav>
-    </header>
-    <script>
-        alert("I caught u man!");
-    </script>
-    <!-- Main Hero Banner -->
-    <section class="hero">
-        <h1>Welcome dude</h1>
-        <p>Click below!</p>
-        <a href="#" class="cta-btn" onclick="showVideo(); return false;">Get Started</a>
-    </section>
-
-    <!-- Key Highlights / Grid Area -->
-    <main class="features">
-        <div class="feature-card">
-            <h3>Playing On Anarchy server</h3>
-            <p>No hate,discrimnation,speech</p>
-        </div>
-        <div class="feature-card">
-            <h3>Recruiting Players</h3>
-            <p>We need builders,restoners,pvpers,cpvpers,farmers,miners,etc</p>
-        </div>
-        <div class="feature-card">
-            <h3>Team Alliance</h3>
-            <p>We ally with many teams and have destoyed many teams in some of the most evil servers</p>
-        </div>
-        <div id="featurePanel" style="
-    display:none;
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+.container{
     background:white;
+    width:400px;
     padding:30px;
     border-radius:10px;
-    box-shadow:0 0 20px rgba(0,0,0,0.3);
-    z-index:3000;
-">
-    <h2>Special Features</h2>
-    <p>This content appeared after clicking Features.</p>
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+    text-align:center;
+}
 
-    <button onclick="closeFeatures()">Close</button>
+h1{
+    margin-bottom:20px;
+    color:#2c3e50;
+}
+
+.server-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.server-list button{
+    padding:15px;
+    border:none;
+    border-radius:6px;
+    background:#3498db;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.server-list button:hover{
+    background:#2980b9;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Select Your Server</h1>
+
+<div class="server-list">
+
+<button onclick="openServer('6b6t')">6b6t</button>
+
+<button onclick="openServer('2b2t')">2b2t</button>
+
+<button onclick="openServer('9b9t')">9b9t</button>
+
+<button onclick="openServer('Constantiam')">Constantiam</button>
+
+<button onclick="openServer('Donut SMP')">Donut SMP</button>
+
+<button onclick="openServer('Other Server')">Other Server</button>
+
 </div>
 
-    </main>
+</div>
 
-    <!-- Bottom Footer Area -->
-    <footer>
-        <p>&copy; 2067 Website. All rights reserved.</p>
-    </footer>
+<script>
+function openServer(server){
+}
+</script>
 
 </body>
 </html>
