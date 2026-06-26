@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Recruitment - TrueArchive Team</title> 
+<style> 
+    body { font-family: Arial, sans-serif; background-color: #1a1a2e; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; } 
+    .container { background-color: #16213e; padding: 30px; border-radius: 10px; width: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); text-align: center; } 
+    input, select, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; box-sizing: border-box; } 
+    input:invalid { border: 2px solid #e94560; } /* Highlights in red if constraints aren't met */
+    input:valid { border: 2px solid #00adb5; } 
+    button { background-color: #e94560; color: white; font-weight: bold; cursor: pointer; } 
+    button:hover { background-color: #ff6b8b; } 
+    .hidden { display: none; } 
+    .link-box { background-color: #0f3460; padding: 15px; border-radius: 5px; margin: 20px 0; word-wrap: break-word; font-family: monospace; } 
+    .back-btn { background-color: #00adb5; } 
+</style> 
+</head> 
+<body> 
+
+<div class="container" id="app-container"> 
+    <h1>TrueArchive Team Recruitment</h1> 
+    <!-- Application Form --> 
+    <form id="recruitmentForm" onsubmit="submitApplication(event)"> 
+        <input type="text" id="name" placeholder="Your Name (Alphabets only)" pattern="[A-Za-z\s]+" title="Name should only contain alphabetic letters and spaces." required> 
+        <input type="text" id="gameName" placeholder="Game Name (IGN) (Letters only)" pattern="[A-Za-z\s]+" title="Game Name should only contain alphabetic letters and spaces." required> 
+        <input type="text" id="server" placeholder="Server You Play On (Letters only)" pattern="[A-Za-z\s]+" title="Server should only contain alphabetic letters and spaces." required> 
+        <input type="text" id="playTime" placeholder="Your Play Time (e.g., 3 hours/day)" required> 
+        <button type="submit">Submit Application</button> 
+    </form> 
+
+    <!-- Success Screen (Initially Hidden) --> 
+    <div id="successScreen" class="hidden"> 
+        <h2 id="congratsMsg">Congrats, [Name]!</h2> 
+        <p>Your application will be reviewed soon. You can go to Contact in the home page and join the Discord server.</p> 
+        <p>Copy your application details below and send them to the recruitment channel in our Discord Server:</p> 
+        <div class="link-box" id="copiedDetails"></div> 
+        <button onclick="copyToClipboard()">📋 Copy Details</button> 
+        <button class="back-btn" onclick="goHome()">Back to Home</button> 
+    </div> 
+</div> 
+
+<script> 
+    function submitApplication(event) { 
+        event.preventDefault(); // Prevent page reload 
+        
+        // Get form values 
+        const name = document.getElementById('name').value; 
+        const gameName = document.getElementById('gameName').value; 
+        const server = document.getElementById('server').value; 
+        const playTime = document.getElementById('playTime').value; 
+        
+        // Set Congrats Message 
+        document.getElementById('congratsMsg').innerText = `Congrats, ${name}!`; 
+        
+        // Format Details 
+        const detailsText = `**Application for BAT Team**\nName: ${name}\nGame Name: ${gameName}\nServer: ${server}\nPlay Time: ${playTime}`; 
+        document.getElementById('copiedDetails').innerText = detailsText; 
+        
+        // Switch Views 
+        document.getElementById('recruitmentForm').style.display = 'none'; 
+        document.getElementById('successScreen').classList.remove('hidden'); 
+    } 
+
+    function copyToClipboard() { 
+        const textToCopy = document.getElementById('copiedDetails').innerText; 
+        navigator.clipboard.writeText(textToCopy).then(() => { 
+            alert('Details copied to clipboard! Paste it into the Discord recruitment channel.'); 
+        }); 
+    } 
+
+    function goHome() { 
+        // Redirects to home page, replace 'ey.html' with your actual home page URL 
+        window.location.href = 'ey.html'; 
+    } 
+</script> 
+
+</body> 
+</html>
