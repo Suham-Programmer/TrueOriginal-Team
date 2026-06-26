@@ -11,7 +11,6 @@
     padding:0;
     box-sizing:border-box;
 }
-
 body{
     font-family:Arial, Helvetica, sans-serif;
     background:linear-gradient(135deg,#3498db,#2c3e50);
@@ -55,6 +54,27 @@ h1{
 .server-list button:hover{
     background:#2980b9;
 }
+.back-home{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.back-home a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    background:#2c3e50;
+    padding:10px 20px;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.back-home a:hover{
+    background:#1a252f;
+}
 </style>
 
 </head>
@@ -66,17 +86,9 @@ h1{
 
 <div class="server-list">
 
-<button onclick="openServer('6b6t')">6b6t</button>
+<button onclick="openServer('Appple MC')">Apple MC</button>
 
-<button onclick="openServer('2b2t')">2b2t</button>
-
-<button onclick="openServer('9b9t')">9b9t</button>
-
-<button onclick="openServer('Constantiam')">Constantiam</button>
-
-<button onclick="openServer('Donut SMP')">Donut SMP</button>
-
-<button onclick="openServer('Other Server')">Other Server</button>
+<button onclick="openServer('Fire MC')">Fire MC</button>
 
 </div>
 
@@ -86,6 +98,9 @@ h1{
 function openServer(server){
 }
 </script>
+<div class="back-home">
+    <a href="ey.html">← Back to Home</a>
+</div>
 
 </body>
 </html>
