@@ -54,6 +54,7 @@ h1{
 .server-list button:hover{
     background:#2980b9;
 }
+
 .back-home{
     position:fixed;
     bottom:20px;
@@ -86,9 +87,9 @@ h1{
 
 <div class="server-list">
 
-<button onclick="openServer('Appple MC')">Apple MC</button>
+<button onclick="openServer('apple')">Apple MC</button>
 
-<button onclick="openServer('Fire MC')">Fire MC</button>
+<button onclick="openServer('fire')">Fire MC</button>
 
 </div>
 
@@ -96,8 +97,18 @@ h1{
 
 <script>
 function openServer(server){
+
+    if(server === "apple"){
+        window.location.href = "https://applemc.fun/";
+    }
+    else if(server === "fire"){
+        // Replace this with the Fire MC website
+        window.location.href = "https://store.firemc.fun/";
+    }
+
 }
 </script>
+
 <div class="back-home">
     <a href="ey.html">← Back to Home</a>
 </div>
